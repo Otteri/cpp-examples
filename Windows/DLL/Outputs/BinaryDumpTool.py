@@ -1,10 +1,11 @@
-# Python 3+ is required to run this script and also dumpbin.exe from VS is needed.
-# Place this script into same directory as the binary file you are trying to inspect and
-# then run this script and the output file (dump.txt) should appear to the same directory location.
+# Python 3+ and dumpbin.exe (shipped with VS) are required!
+# Place this script into the same directory as the binary file you are trying to inspect.
+# After this, run the script, answer to the questions and then an output file (dump.txt)
+# should appear to the directory. The file contains all the information you requested for.
 import sys
 import subprocess
 
-# Location of the needed dumpbin.exe:
+# Possible locations of the required dumpbin.exe. Replace the path with correct one.
 # r"C:/Program Files (x86)/Microsoft Visual Studio/2017/Enterprise/VC/Tools/MSVC/14.16.27023/bin/Hostx64/x64/dumpbin.exe"
 # r"C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/VC/Tools/MSVC/14.14.26428/bin/Hostx64/x64/dumpbin.exe"
 DUMPBIN = r"C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.22.27905/bin/Hostx64/x64/dumpbin.exe"
@@ -37,10 +38,10 @@ def main():
         print("\nUsage:")
         print("Place this file into same directory as the file you are trying to inspect "\
               "and then hope that your dumpbin.exe exists in the hardcoded path:", DUMPBIN)
-        print("Then follow the script directions and dump.txt should appear to current directory location") 
+        print("Then follow the script directions and dump.txt should appear to current directory location")
         input()
         return
-    
+
     writeToFile(cmd)
 
 main()
